@@ -24,8 +24,13 @@ const DeviceDetails = () => {
     return <div>Loading...</div>;
   }
 
+  
+
   return (
     <div>
+      
+      {Array.from({ length: 90 }).map((_, index) => <Device />)}
+  
       <h1>Szczegóły Urządzenia</h1>
       <p>ID: {device.id}</p>
       <p>Name: {device.name}</p>
