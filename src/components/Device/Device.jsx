@@ -1,4 +1,4 @@
-import "Device.scss"
+import "./Device.scss"
 
 const Device = () => {
 	return (

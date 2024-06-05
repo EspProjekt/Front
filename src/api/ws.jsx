@@ -18,6 +18,7 @@ export const WebSocketProvider = ({ children }) => {
 
         ws.onmessage = (event) => {
             const message = JSON.parse(event.data);
+            console.log(message);
         }
 
 
@@ -25,7 +26,6 @@ export const WebSocketProvider = ({ children }) => {
             console.log("Disconnected");
 
             ws.close();
-            setIsConnected(false);
             setSocket(null);
         };
 

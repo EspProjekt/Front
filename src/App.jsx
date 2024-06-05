@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { DeviceDetails, DeviceList, Device } from "./components";
+import { DeviceList, Device } from "./components";
 
 const App = () => {
   return (
@@ -8,7 +8,6 @@ const App = () => {
       <Device />
       <Routes>
         <Route path="/" element={<DeviceList />} />
-        <Route path="/device/:id" element={<DeviceDetails />} />
       </Routes>
     </div>
   );
