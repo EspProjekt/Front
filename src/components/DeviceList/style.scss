@@ -1,8 +1,10 @@
 main {
-  display: flex;
-  flex-wrap: wrap;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  gap: 10px 0;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Powtarza kolumny równej szerokości */
+  grid-template-rows: repeat(3, 1fr); /* Powtarza wiersze równej wysokości */
+  grid-gap: 10px;
+  overflow-y: auto; /* Ukrywa przewijanie w osi Y */
 }

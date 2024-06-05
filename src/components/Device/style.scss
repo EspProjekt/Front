@@ -1,25 +1,21 @@
-main {
-  section {
+.device {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 10px 0 0 10px;
     background-color: #888;
     border-radius: 0.3em;
-    height: 45vh;
-    width: 20vw;
+    height: 305px;
 
     p {
-      display: flex;
-      justify-content: center;
-      color: #fff;
-      font-size: 18px;
+        display: flex;
+        justify-content: center;
+        color: #fff;
+        font-size: 18px;
     }
 
     button {
-      height: 2rem;
-      width: 8rem;
+        height: 2rem;
+        width: 8rem;
     }
-  }
 }

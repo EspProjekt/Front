@@ -1,36 +1,17 @@
 import "./style.scss";
 import { useEffect, useState } from "react";
 
-const Device = () => {
-  const [device, setDevice] = useState(null);
-
-  useEffect(() => {
-    setDevice([
-      {
-        name: "Moek",
-        status: "connected",
-        light: "on",
-      },
-    ]);
-  }, []);
+const Device = ({device}) => {
 
   return (
-    <main>
-      {device ? (
-        device.map((i, index) => (
-          <section key={index}>
-            <div>
-              <p>Device name: {i.name}</p>
-              <p>Status: {i.status}</p>
-              <p>Light mode: {i.light}</p>
-            </div>
-            <button>Change light mode</button>
-          </section>
-        ))
-      ) : (
-        <p>Loading...</p>
-      )}
-    </main>
+    <article className="device">
+        <div>
+            <p>Device name: {device.name}</p>
+            <p>Status: {device.status}</p>
+            <p>Light mode: {device.light}</p>
+        </div>
+        <button>Change light mode</button>
+    </article>
   );
 };
 
