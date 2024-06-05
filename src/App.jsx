@@ -1,14 +1,11 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { DeviceDetails, DeviceList, Device } from "./components";
+import { DeviceList } from "./components";
 
 const App = () => {
   return (
-    <div> 
-      <Device />
+    <div>
       <Routes>
         <Route path="/" element={<DeviceList />} />
-        <Route path="/device/:id" element={<DeviceDetails />} />
       </Routes>
     </div>
   );
