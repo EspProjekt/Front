@@ -3,8 +3,8 @@ main {
   height: 100vh;
   padding: 10px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Powtarza kolumny równej szerokości */
-  grid-template-rows: repeat(3, 1fr); /* Powtarza wiersze równej wysokości */
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 10px;
-  overflow-y: auto; /* Ukrywa przewijanie w osi Y */
+  overflow-y: auto; 
 }
