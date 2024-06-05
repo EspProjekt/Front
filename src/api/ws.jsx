@@ -37,15 +37,16 @@ export const WebSocketProvider = ({ children }) => {
         setSocket(ws);
     };
 
-    function handleStatusCode(statusCode, expectedStatus, message){
+    function handleStatusCode(statusCode, expectedStatus, message, data){
         if (statusCode !== expectedStatus) return toast.error("An error occurred!")
+        
+        if (data) setDeviceList(data);
         toast.success(message)
     }
 
     async function fetchDeviceList(){
         const response = await apiClient.get('/device-list');
         const data = response.data;
-    
         setDeviceList(data);
     }
     
@@ -53,29 +54,20 @@ export const WebSocketProvider = ({ children }) => {
     async function handleLightModeChange(deviceId) {
         const response = await apiClient.post(`/device/light/${deviceId}`);
         const status = response.status;
-        const data = response.data;
-
-        setDeviceList(data);
-        handleStatusCode(status, 200, "Light changed!");
+        handleStatusCode(status, 200, "Light changed!", response.data);
 
     }
     
     async function handleReconnect(deviceId){
         const response = await apiClient.post(`/device/reconnect/${deviceId}`)
         const status = response.status;
-        const data = response.data;
-
-        setDeviceList(data);
         handleStatusCode(status, 200, "Reconnect attempt was made!");
     }
 
     async function handleDisconnect(deviceId){
         const response = await apiClient.delete(`/device/deactivate/${deviceId}`)
         const status = response.status;
-        const data = response.data;
-        
-        setDeviceList(data);
-        handleStatusCode(status, 204, "Device disconnected!");
+        handleStatusCode(status, 200, "Device disconnected!", response.data);
     }
 
     useEffect(() => {
